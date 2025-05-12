@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
-import { openTelegramBot } from "@/utils/telegramUtils";
+
+import { Button } from "../components/ui/button";
+import { useToast } from "../components/ui/use-toast";
+import { openTelegramBot } from "../utils/telegramUtils";
 
 export default function CTASection() {
   const { toast } = useToast();

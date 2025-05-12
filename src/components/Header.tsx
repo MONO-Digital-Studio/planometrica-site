@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
@@ -108,6 +109,7 @@ export default function Header() {
               onClick={e => {
                 e.preventDefault();
                 scrollToSection(item.id);
+                closeMenu();
               }}
             >
               {item.title}

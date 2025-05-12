@@ -1,14 +1,15 @@
+
 import { useEffect } from "react";
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import AboutPlatform from "@/components/AboutPlatform";
-import TargetAudience from "@/components/TargetAudience";
-import CapabilitiesSection from "@/components/CapabilitiesSection";
-import TechnologySection from "@/components/TechnologySection";
-import AdvantagesSection from "@/components/AdvantagesSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
-import { generateStructuredData, measurePageLoad } from "@/utils/seoUtils";
+import Header from "../components/Header";
+import HeroSection from "../components/HeroSection";
+import AboutPlatform from "../components/AboutPlatform";
+import TargetAudience from "../components/TargetAudience";
+import CapabilitiesSection from "../components/CapabilitiesSection";
+import TechnologySection from "../components/TechnologySection";
+import AdvantagesSection from "../components/AdvantagesSection";
+import CTASection from "../components/CTASection";
+import Footer from "../components/Footer";
+import { generateStructuredData, measurePageLoad } from "../utils/seoUtils";
 
 const Index = () => {
   useEffect(() => {
