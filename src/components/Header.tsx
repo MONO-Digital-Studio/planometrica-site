@@ -1,9 +1,10 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "./ui/button";
+import { useIsMobile } from "../hooks/use-mobile";
 import { Menu, X } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
-import { openTelegramBot } from "@/utils/telegramUtils";
+import { useToast } from "./ui/use-toast";
+import { scrollToSection, openTelegramBot } from "../utils/commonUtils";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,14 +31,6 @@ export default function Header() {
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    closeMenu();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const menuItems = [

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { scrollToSection } from "../utils/commonUtils";
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -12,13 +13,6 @@ export default function Footer() {
     }, 60 * 60 * 1000);
     return () => clearInterval(interval);
   }, [currentYear]);
-  
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   
   return (
     <footer className="text-white py-8 md:py-12 bg-[#1a2c54]">
@@ -82,8 +76,8 @@ export default function Footer() {
             © {currentYear} Planometrica. Все права защищены.
           </p>
           <div className="flex gap-4 md:gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Политика конфиденциальности</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Условия использования</a>
+            <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Политика конфиденциальности</a>
+            <a href="/terms" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Условия использования</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useToast } from "@/components/ui/use-toast";
-import { openTelegramBot } from "@/utils/telegramUtils";
+import React from "react";
+import { Button } from "./ui/button";
+import { useIsMobile } from "../hooks/use-mobile";
+import { useToast } from "./ui/use-toast";
+import { openTelegramBot, scrollToSection } from "../utils/commonUtils";
 
 export default function HeroSection() {
   const isMobile = useIsMobile();
@@ -15,14 +16,6 @@ export default function HeroSection() {
       description: "Открываем чат с нашим ботом для демонстрации.",
       variant: "default"
     });
-  };
-  
-  // Функция для прокрутки к секции (оставлена для совместимости)
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
   
   // На мобильных устройствах переупорядочиваем контент

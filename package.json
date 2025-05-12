@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "watch": "vite --port 3000"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
