@@ -11,6 +11,11 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8080
+    port: 8080,
+    open: true, // Automatically open browser on start
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
   }
 });
