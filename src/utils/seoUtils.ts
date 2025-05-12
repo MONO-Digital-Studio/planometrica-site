@@ -4,12 +4,12 @@ export const generateStructuredData = (type: string) => {
     return {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Planometrica",
-      url: "https://planometrica.ru/",
-      description: "Инновационная платформа для 3D-проектирования домов, использующая параметрическое моделирование и ИИ",
-      potentialAction: {
+      "name": "Planometrica",
+      "url": "https://planometrica.ru/",
+      "description": "Инновационная платформа для 3D-проектирования домов, использующая параметрическое моделирование и искусственный интеллект",
+      "potentialAction": {
         "@type": "SearchAction",
-        target: "https://planometrica.ru/search?q={search_term_string}",
+        "target": "https://planometrica.ru/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     };
@@ -19,18 +19,18 @@ export const generateStructuredData = (type: string) => {
     return {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Planometrica",
-      url: "https://planometrica.ru/",
-      logo: "https://planometrica.ru/planometrica_logo.png",
-      contactPoint: {
+      "name": "Planometrica",
+      "url": "https://planometrica.ru/",
+      "logo": "https://planometrica.ru/planometrica_logo.png",
+      "contactPoint": {
         "@type": "ContactPoint",
-        telephone: "+7-XXX-XXX-XXXX",
-        contactType: "customer service"
+        "telephone": "+7-XXX-XXX-XXXX",
+        "contactType": "customer service"
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/planometrica",
-        "https://www.instagram.com/planometrica",
-        "https://twitter.com/planometrica"
+        "https://twitter.com/planometrica",
+        "https://www.linkedin.com/company/planometrica"
       ]
     };
   }
@@ -39,20 +39,22 @@ export const generateStructuredData = (type: string) => {
 };
 
 export const measurePageLoad = () => {
-  if (typeof window !== "undefined") {
-    const perfData = window.performance.timing;
-    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-    const domContentLoaded = perfData.domContentLoadedEventEnd - perfData.navigationStart;
-    const firstPaint = performance.getEntriesByType("paint")[0] 
-      ? performance.getEntriesByType("paint")[0].startTime 
-      : 0;
-      
-    return {
-      pageLoadTime,
-      domContentLoaded,
-      firstPaint,
-      isGoodPerformance: pageLoadTime < 3000
-    };
+  if (typeof window === 'undefined' || !window.performance) {
+    return null;
   }
-  return null;
+  
+  const perfData = window.performance.timing;
+  const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+  const dnsLookupTime = perfData.domainLookupEnd - perfData.domainLookupStart;
+  const tcpConnectTime = perfData.connectEnd - perfData.connectStart;
+  const serverResponseTime = perfData.responseEnd - perfData.requestStart;
+  const domLoadTime = perfData.domComplete - perfData.domLoading;
+  
+  return {
+    pageLoadTime,
+    dnsLookupTime,
+    tcpConnectTime,
+    serverResponseTime,
+    domLoadTime
+  };
 };
