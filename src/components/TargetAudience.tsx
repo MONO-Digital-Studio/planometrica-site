@@ -1,5 +1,6 @@
+
 import { useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../components/ui/card";
 import { HardHatIcon } from "./icons/PlatformIcons";
 import { useIsMobile } from "@/hooks/use-mobile";
 
