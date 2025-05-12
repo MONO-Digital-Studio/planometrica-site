@@ -1,7 +1,7 @@
 
-import { FeatureCard } from "../components/platforms/FeatureCard";
-import { SectionTitle } from "../components/platforms/SectionTitle";
-import { ProjectDesignIcon, VisualizationIcon, AutomationIcon } from "../components/icons/PlatformIcons";
+import { FeatureCard } from "./platforms/FeatureCard";
+import { SectionTitle } from "./platforms/SectionTitle";
+import { ProjectDesignIcon, VisualizationIcon, AutomationIcon } from "./icons/PlatformIcons";
 
 export default function AboutPlatform() {
   const features = [
