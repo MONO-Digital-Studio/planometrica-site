@@ -5,6 +5,8 @@ import HeroSection from './components/HeroSection';
 import AdvantagesSection from './components/AdvantagesSection';
 import TargetAudience from './components/TargetAudience';
 import CapabilitiesSection from './components/CapabilitiesSection';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
         <AdvantagesSection />
         <TargetAudience />
         <CapabilitiesSection />
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 };
